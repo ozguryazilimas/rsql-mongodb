@@ -4,22 +4,15 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
-    <parent>
-        <groupId>org.springframework.boot</groupId>
-        <artifactId>spring-boot-starter-parent</artifactId>
-        <version>1.2.5.RELEASE</version>
-    </parent>
-
-    <groupId>com.rutledgepaulv.github</groupId>
+    <groupId>io.rocketbase.commons</groupId>
     <artifactId>rsql-mongodb</artifactId>
-    <version>1.0-SNAPSHOT</version>
+    <version>LATEST-SNAPSHOT</version>
 
-    <developers>
-        <developer>
-            <name>Paul Rutledge</name>
-            <email>paul.v.rutledge@gmail.com</email>
-        </developer>
-    </developers>
+
+    <name>rsql-mongodb support for spring</name>
+    <description>provides converters between rsql-query-language -> mongodb Criteria of spring-data</description>
+    <url>https://github.com/rocketbase-io/commons-auth/</url>
+    <inceptionYear>2020</inceptionYear>
 
     <licenses>
         <license>
@@ -28,39 +21,75 @@
         </license>
     </licenses>
 
-    <scm>
-        <url>http://github.com/rutledgepaulv/rsql-mongodb</url>
-        <connection>scm:git:git@github.com:rutledgepaulv/rsql-mongodb.git</connection>
-    </scm>
-
-    <ciManagement>
-        <system>travis</system>
-        <url>https://travis-ci.org/rutledgepaulv/rsql-mongodb</url>
-    </ciManagement>
-
     <issueManagement>
         <system>github</system>
-        <url>https://github.com/rutledgepaulv/rsql-mongodb/issues</url>
+        <url>https://github.com/rocketbase-io/rsql-mongodb/issues</url>
     </issueManagement>
-    
+
+    <scm>
+        <connection>scm:git:git://github.com/rocketbase-io/rsql-mongodb.git</connection>
+        <developerConnection>scm:git:git@github.com:rocketbase-io/rsql-mongodb.git</developerConnection>
+        <url>https://github.com/rocketbase-io/rsql-mongodb/tree/master/</url>
+    </scm>
+
+
+    <developers>
+        <developer>
+            <name>Paul Rutledge</name>
+            <email>paul.v.rutledge@gmail.com</email>
+        </developer>
+        <developer>
+            <name>Marten Prieß</name>
+            <id>melistik</id>
+            <email>marten@rocketbase.io</email>
+            <organization>rocketbase.io software productions GmbH</organization>
+        </developer>
+    </developers>
+
+    <distributionManagement>
+        <snapshotRepository>
+            <id>ossrh</id>
+            <url>https://oss.sonatype.org/content/repositories/snapshots</url>
+        </snapshotRepository>
+        <repository>
+            <id>ossrh</id>
+            <url>https://oss.sonatype.org/service/local/staging/deploy/maven2/</url>
+        </repository>
+    </distributionManagement>
 
     <properties>
-        <java.version>1.8</java.version>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <maven.compiler.source>1.8</maven.compiler.source>
+        <maven.compiler.target>1.8</maven.compiler.target>
+        <spring-boot.version>2.2.4.RELEASE</spring-boot.version>
+        <maven.javadoc.failOnError>false</maven.javadoc.failOnError>
+        <guava.version>28.2-jre</guava.version>
     </properties>
 
 
-    <dependencies>
+    <dependencyManagement>
+        <dependencies>
+            <dependency>
+                <!-- Import dependency management from Spring Boot -->
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-dependencies</artifactId>
+                <version>${spring-boot.version}</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
+        </dependencies>
+    </dependencyManagement>
 
-        <!-- REAL DEPS -->
+    <dependencies>
         <dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter-data-mongodb</artifactId>
+            <groupId>org.springframework.data</groupId>
+            <artifactId>spring-data-mongodb</artifactId>
         </dependency>
 
         <dependency>
             <groupId>cz.jirutka.rsql</groupId>
             <artifactId>rsql-parser</artifactId>
-            <version>2.0.0</version>
+            <version>2.1.0</version>
         </dependency>
 
 
@@ -70,11 +99,16 @@
             <artifactId>spring-boot-starter-test</artifactId>
             <scope>test</scope>
         </dependency>
-        
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-data-mongodb</artifactId>
+            <scope>test</scope>
+        </dependency>
+
         <dependency>
             <groupId>com.google.guava</groupId>
             <artifactId>guava</artifactId>
-            <version>18.0</version>
+            <version>${guava.version}</version>
             <scope>test</scope>
         </dependency>
 

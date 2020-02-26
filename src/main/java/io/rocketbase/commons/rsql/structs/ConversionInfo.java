@@ -1,13 +1,13 @@
-package com.rutledgepaulv.github.structs;
+package io.rocketbase.commons.rsql.structs;
 
-import com.rutledgepaulv.github.Operator;
+import cz.jirutka.rsql.parser.ast.ComparisonOperator;
 
 public class ConversionInfo {
 
     private String pathToField;
     private String argument;
     private Class<?> targetEntityClass;
-    private Operator operator;
+    private ComparisonOperator operator;
 
     public String getPathToField() {
         return pathToField;
@@ -36,11 +36,11 @@ public class ConversionInfo {
         return this;
     }
 
-    public Operator getOperator() {
+    public ComparisonOperator getOperator() {
         return operator;
     }
 
-    public ConversionInfo setOperator(Operator operator) {
+    public ConversionInfo setOperator(ComparisonOperator operator) {
         this.operator = operator;
         return this;
     }

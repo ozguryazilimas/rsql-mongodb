@@ -1,9 +1,9 @@
-package com.rutledgepaulv.github.argconverters;
+package io.rocketbase.commons.rsql.argconverters;
 
-import com.rutledgepaulv.github.structs.ConversionInfo;
-import com.rutledgepaulv.github.structs.Lazy;
+import io.rocketbase.commons.rsql.structs.ConversionInfo;
+import io.rocketbase.commons.rsql.structs.Lazy;
 import org.springframework.core.convert.ConversionService;
-import org.springframework.data.mapping.context.PersistentPropertyPath;
+import org.springframework.data.mapping.PersistentPropertyPath;
 import org.springframework.data.mongodb.core.mapping.MongoMappingContext;
 import org.springframework.data.mongodb.core.mapping.MongoPersistentProperty;
 

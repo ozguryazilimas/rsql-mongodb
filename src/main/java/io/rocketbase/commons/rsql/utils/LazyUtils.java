@@ -1,6 +1,6 @@
-package com.rutledgepaulv.github.utils;
+package io.rocketbase.commons.rsql.utils;
 
-import com.rutledgepaulv.github.structs.Lazy;
+import io.rocketbase.commons.rsql.structs.Lazy;
 
 import java.util.List;
 

@@ -1,10 +1,11 @@
-package com.rutledgepaulv.github.models;
+package io.rocketbase.commons.rsql.models;
 
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 import org.springframework.data.mongodb.core.mapping.Field;
 
 import java.util.Calendar;
+import java.util.Set;
 
 @Document(collection = "persons")
 public class Person {
@@ -22,6 +23,7 @@ public class Person {
     @Field("aGoodFieldName")
     private int aBadFieldName;
 
+    private Set<Feature> features;
 
     // custom type conversions
     private Calendar dateOfBirth;

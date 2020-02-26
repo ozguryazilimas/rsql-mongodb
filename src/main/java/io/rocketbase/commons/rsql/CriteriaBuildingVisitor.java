@@ -1,4 +1,4 @@
-package com.rutledgepaulv.github;
+package io.rocketbase.commons.rsql;
 
 import cz.jirutka.rsql.parser.ast.*;
 import org.springframework.data.mongodb.core.query.Criteria;

@@ -1,7 +1,7 @@
-package com.rutledgepaulv.github.argconverters;
+package io.rocketbase.commons.rsql.argconverters;
 
-import com.rutledgepaulv.github.structs.ConversionInfo;
-import com.rutledgepaulv.github.structs.Lazy;
+import io.rocketbase.commons.rsql.structs.ConversionInfo;
+import io.rocketbase.commons.rsql.structs.Lazy;
 
 public class NoOpConverter implements StringToQueryValueConverter {
 

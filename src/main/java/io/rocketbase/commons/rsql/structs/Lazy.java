@@ -1,4 +1,4 @@
-package com.rutledgepaulv.github.structs;
+package io.rocketbase.commons.rsql.structs;
 
 import java.util.function.Supplier;
 

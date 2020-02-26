@@ -1,6 +1,6 @@
-package com.rutledgepaulv.github;
+package io.rocketbase.commons.rsql;
 
-import com.rutledgepaulv.github.models.Person;
+import io.rocketbase.commons.rsql.models.Person;
 import org.junit.Test;
 
 public class PersonLogicalComboQueriesTest extends BaseIntegrationTest<Person>{

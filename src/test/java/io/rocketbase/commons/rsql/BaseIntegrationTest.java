@@ -1,7 +1,7 @@
-package com.rutledgepaulv.github;
+package io.rocketbase.commons.rsql;
 
 import com.google.common.reflect.TypeToken;
-import com.mongodb.DBObject;
+import org.bson.Document;
 import org.junit.Before;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -23,7 +23,8 @@ import static org.junit.Assert.assertEquals;
 @ContextConfiguration(classes = BaseIntegrationTest.TestApplication.class)
 public abstract class BaseIntegrationTest<T> {
 
-    protected Class<T> CLAZZ = (Class<T>)(new TypeToken<T>(getClass()){}).getRawType();
+    protected Class<T> CLAZZ = (Class<T>) (new TypeToken<T>(getClass()) {
+    }).getRawType();
     protected RsqlMongoAdapter adapter;
 
     @Autowired
@@ -42,10 +43,10 @@ public abstract class BaseIntegrationTest<T> {
     }
 
     protected void check(String rsql, String mongo) {
-        assertEquals(mongo, query(rsql).getQueryObject().toString());
+        assertEquals(mongo.replace(" ", ""), query(rsql).getQueryObject().toJson().replace(" ", ""));
     }
 
-    protected void check(String rsql, Consumer<DBObject> consumer) {
+    protected void check(String rsql, Consumer<Document> consumer) {
         consumer.accept(query(rsql).getQueryObject());
     }
 

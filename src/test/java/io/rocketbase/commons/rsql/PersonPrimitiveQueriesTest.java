@@ -1,8 +1,7 @@
-package com.rutledgepaulv.github;
+package io.rocketbase.commons.rsql;
 
+import io.rocketbase.commons.rsql.models.Person;
 import org.junit.Test;
-import com.rutledgepaulv.github.models.*;
-
 
 
 public class PersonPrimitiveQueriesTest extends BaseIntegrationTest<Person> {
@@ -15,7 +14,7 @@ public class PersonPrimitiveQueriesTest extends BaseIntegrationTest<Person> {
 
     @Test
     public void testNotEquals() {
-        check("firstName!=joe","{ \"firstName\" : { \"$ne\" : \"joe\"}}");
+        check("firstName!=joe", "{ \"firstName\" : { \"$ne\" : \"joe\"}}");
     }
 
     @Test
