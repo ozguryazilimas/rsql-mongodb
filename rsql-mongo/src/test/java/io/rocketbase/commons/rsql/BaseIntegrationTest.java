@@ -1,6 +1,7 @@
 package io.rocketbase.commons.rsql;
 
 import com.google.common.reflect.TypeToken;
+import io.rocketbase.commons.rsql.converter.ComparisonToCriteriaConverter;
 import org.bson.Document;
 import org.junit.Before;
 import org.junit.runner.RunWith;

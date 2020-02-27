@@ -1,6 +1,7 @@
-package io.rocketbase.commons.rsql;
+package io.rocketbase.commons.rsql.visitor;
 
 import cz.jirutka.rsql.parser.ast.*;
+import io.rocketbase.commons.rsql.converter.ComparisonToCriteriaConverter;
 import org.springframework.data.mongodb.core.query.Criteria;
 
 import java.util.List;

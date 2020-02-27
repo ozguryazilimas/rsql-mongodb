@@ -1,4 +1,4 @@
-package io.rocketbase.commons.rsql;
+package io.rocketbase.commons.rsql.converter;
 
 import cz.jirutka.rsql.parser.ast.ComparisonNode;
 import cz.jirutka.rsql.parser.ast.ComparisonOperator;

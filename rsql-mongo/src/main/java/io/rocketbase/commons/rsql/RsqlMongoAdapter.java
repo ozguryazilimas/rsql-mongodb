@@ -1,9 +1,11 @@
 package io.rocketbase.commons.rsql;
 
 import cz.jirutka.rsql.parser.RSQLParser;
+import io.rocketbase.commons.rsql.converter.ComparisonToCriteriaConverter;
+import io.rocketbase.commons.rsql.visitor.CriteriaBuildingVisitor;
 import org.springframework.data.mongodb.core.query.Criteria;
 
-public class RsqlMongoAdapter {
+public class RsqlMongoAdapter extends RsqlBaseAdapter {
 
     private ComparisonToCriteriaConverter converter;
 
